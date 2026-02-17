@@ -1,4 +1,4 @@
-def function_0():
+def function_0() -> None:
     nom = "Rose"
     taille = 25
     age = 30
@@ -9,5 +9,6 @@ def function_0():
     print()
     print("=== End of Program ===")
 
+
 if __name__ == "__main__":
-        function_0()
+    function_0()
