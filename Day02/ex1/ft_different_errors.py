@@ -30,7 +30,7 @@ def garden_operations(object: str, division: str, files: str,
         result = (dico[f"{plant}"])
         del result
     except KeyError:
-        print(f"Caught KeyError: 'missing /_{plant}'", "\n")
+        print(f"Caught KeyError: 'missing \\_{plant}'", "\n")
         return
 
 

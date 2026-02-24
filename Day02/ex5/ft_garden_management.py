@@ -1,5 +1,4 @@
 class GardenManager:
-""" A modifierrrrr """
     def __init__(self) -> None:
         self.plants = []
         self.water = []
