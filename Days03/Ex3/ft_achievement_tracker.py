@@ -1,4 +1,5 @@
-def add_succes(achivment: set, nb_of_achivment: int, start_index: int = 0) -> set:
+def add_succes(achivment: set, nb_of_achivment: int,
+               start_index: int = 0) -> set:
     tab = []
     count = 0
     added = 0
@@ -10,10 +11,12 @@ def add_succes(achivment: set, nb_of_achivment: int, start_index: int = 0) -> se
         count += 1
     return set(tab)
 
+
 def occurence_cheker(search: set, name: set) -> int:
     i = 0
-    if search in name:
-        i += 1
+    for item in search:
+        if item in name:
+            i += 1
     return i
 
 
@@ -36,15 +39,15 @@ if __name__ == "__main__":
     common = Alice.intersection(Bob)
     common = Charlie.intersection(common)
     print(f"Common to all players: {common}")
-    rare = Alice.difference(Bob)
-    rare = Charlie.difference(rare)
+    rare_alice = Alice.difference(Bob).difference(Charlie)
+    rare_bob = Bob.difference(Alice).difference(Charlie)
+    rare_charlie = Charlie.difference(Alice).difference(Bob)
+    rare_list = list(rare_alice) + list(rare_bob) + list(rare_charlie)
+    rare = set(rare_list)
     i = occurence_cheker(rare, Alice) + occurence_cheker(rare, Bob)
-    i + + occurence_cheker(rare, Charlie)
-    print(f"Rare achievements ({i} player): {rare}")
+    i += occurence_cheker(rare, Charlie)
+    print(f"Rare achievements ({i} player): {rare}\n")
 
     print(f"Alice vs Bob common: {Alice.union(Bob)}")
     print(f"Alice unique: {Alice.difference(Bob)}")
     print(f"Bob unique: {Bob.difference(Alice)}")
-
-
-ERRREUR
